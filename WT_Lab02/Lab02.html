@@ -3,55 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercise 3 - Creating Hyperlinks</title>
+    <title>Exercise 4 - Working with Images</title>
 </head>
 <body>
 
-    <h1>Exercise 3: Creating Hyperlinks</h1>
+    <h1>Exercise 4: Working with Images</h1>
 
-    <!-- 1. Absolute links (external websites) -->
-    <h2>1. Absolute Links</h2>
-    <p>
-        Visit <a href="https://www.google.com" target="_blank">Google</a> for web searches.<br>
-        Check out <a href="https://www.wikipedia.org" target="_blank">Wikipedia</a> for information.
-    </p>
-
-    <hr>
-
-    <!-- 2. Relative links (to other local pages) -->
-    <h2>2. Relative Links</h2>
-    <p>
-        Go to the <a href="index.html">Home Page</a><br>
-        View the <a href="report.html">Lab Report</a>
-    </p>
+    <h3>
+        Department of Computer Science<br>
+        University of Engineering & Technology, Peshawar<br>
+        CS 224L Web Technologies<br>
+        Instructor: Mr. Mohammad
+    </h3>
 
     <hr>
 
-    <!-- 3. Email and telephone links -->
-    <h2>3. Email and Telephone Links</h2>
-    <p>
-        Contact me by email: <a href="mailto:anfal@example.com">anfal@example.com</a><br>
-        Call me: <a href="tel:+923001234567">+92 300 1234567</a>
-    </p>
+    <!-- Adding Image -->
+    <h2>Adding an Image with Alt Text</h2>
+    <p>The image below is inserted using the <code>&lt;img&gt;</code> tag.</p>
+    <img src="UETlogo.png" alt="UET Peshawar Logo" width="200">
 
     <hr>
 
-    <!-- 4. Anchor links within the same page -->
-    <h2>4. Anchor Links (Same Page)</h2>
-    <p>
-        Jump to: 
-        <a href="#section1">Section 1</a> | 
-        <a href="#section2">Section 2</a> | 
-        <a href="#top">Back to Top</a>
-    </p>
+    <!-- Image as a Link -->
+    <h2>Image as a Link</h2>
+    <p>Click the logo to open the UET Peshawar website:</p>
+    <a href="https://www.uetpeshawar.edu.pk" target="_blank">
+        <img src="UETlogo.png" alt="UET Website Link" width="150">
+    </a>
 
-    <h3 id="section1">Section 1</h3>
-    <p>This is the content of Section 1. You can use anchors to jump directly to this part of the page.</p>
+    <hr>
 
-    <h3 id="section2">Section 2</h3>
-    <p>This is the content of Section 2. Anchor links make navigation within long pages easier.</p>
-
-    <p><a id="top" href="#top">Back to Top</a></p>
+    <!-- Different Sizes -->
+    <h2>Experimenting with Sizes</h2>
+    <p>Same image in different sizes:</p>
+    <img src="UETlogo.png" alt="Small Logo" width="100" height="100">
+    <img src="UETlogo.png" alt="Medium Logo" width="200" height="200">
+    <img src="UETlogo.png" alt="Large Logo" width="300" height="300">
 
 </body>
 </html>
