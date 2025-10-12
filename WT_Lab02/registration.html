@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Student Registration - Lab02</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .form-container {
+      max-width: 720px;
+      margin: 1.2rem auto;
+      padding: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      background: #fff;
+    }
+    .form-row { display:flex; gap:1rem; flex-wrap:wrap; }
+    .form-group { flex:1 1 220px; display:flex; flex-direction:column; margin-bottom:0.8rem; }
+    label { font-weight:600; margin-bottom:0.25rem; }
+    input[type="text"], input[type="email"], input[type="password"], select {
+      padding:0.45rem 0.6rem;
+      border:1px solid #bbb;
+      border-radius:4px;
+      font-size:1rem;
+    }
+    fieldset { border:1px solid #ddd; padding:0.6rem 0.8rem; border-radius:6px; margin-bottom:0.8rem; }
+    legend { font-weight:700; }
+    .actions { display:flex; gap:0.6rem; align-items:center; margin-top:0.6rem; }
+    button[type="submit"] { background:#0066cc; color:#fff; border:none; padding:0.6rem 1rem; border-radius:4px; cursor:pointer; }
+    button[type="submit"]:hover { opacity:0.95; }
+    .note { font-size:0.9rem; color:#555; margin-top:0.6rem; }
+    .error { color:#cc3300; font-size:0.9rem; display:none; }
+    @media (max-width:540px) {
+      .form-row { flex-direction:column; }
+    }
+  </style>
+</head>
+<body>
+  <header style="text-align:center;padding:0.6rem 0;background:#f4f4f4;">
+    <h1>Student Registration</h1>
+    <p>Department of Computer Science — University of Engineering & Technology, Peshawar</p>
+  </header>
+
+  <main>
+    <section class="form-container" aria-labelledby="reg-title">
+      <h2 id="reg-title">Register for CS 224L — Web Technologies</h2>
+
+      <!-- Demo action; replace with a real URL (e.g. Formspree) when ready -->
+      <!-- Example Formspree action: action="https://formspree.io/f/yourFormId" -->
+      <form id="registrationForm" action="#" method="post" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input id="name" name="name" type="text" placeholder="Your full name" required minlength="3" autocomplete="name" aria-describedby="err-name" />
+            <div class="error" id="err-name">Please enter your full name (min 3 characters).</div>
+          </div>
+
+          <div class="form-group">
+            <label for="regno">Registration Number</label>
+            <input id="regno" name="regno" type="text" placeholder="e.g. 24PWBCS1069" required pattern="[A-Za-z0-9\-]{3,}" autocomplete="off" aria-describedby="err-regno" />
+            <div class="error" id="err-regno">Enter a valid registration number (alphanumeric).</div>
+            <small class="note">Alphanumeric (dashes allowed).</small>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required autocomplete="email" aria-describedby="err-email" />
+            <div class="error" id="err-email">Please enter a valid email address.</div>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" placeholder="Create a password" required minlength="6" autocomplete="new-password" aria-describedby="err-pass" />
+            <div class="error" id="err-pass">Password must be at least 6 characters.</div>
+            <small class="note">Minimum 6 characters. (Demo only — don’t submit real passwords.)</small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="course">Select Course</label>
+          <select id="course" name="course" required>
+            <option value="">-- Choose a course --</option>
+            <option value="cs224l">CS 224L - Web Technologies</option>
+            <option value="cs101">CS 101 - Intro to Programming</option>
+            <option value="ai201">AI 201 - Artificial Intelligence</option>
+            <option value="ds150">DS 150 - Data Science Intro</option>
+          </select>
+        </div>
+
+        <fieldset>
+          <legend>Semester</legend>
+          <label><input type="radio" name="semester" value="fall" required> Fall</label>
+          <label style="margin-left:1rem;"><input type="radio" name="semester" value="spring"> Spring</label>
+        </fieldset>
+
+        <div class="form-group">
+          <label><input id="terms" name="terms" type="checkbox" required> I accept the <a href="#" target="_blank">terms and conditions</a>.</label>
+          <div class="error" id="err-terms">You must accept terms to register.</div>
+        </div>
+
+        <input type="hidden" name="department" value="Department of Computer Science" />
+        <input type="hidden" name="lecturer" value="Mr. Mohammad" />
+
+        <div class="actions">
+          <button type="submit">Submit Registration</button>
+          <button type="reset">Reset</button>
+        </div>
+
+        <p class="note">CS 224L Web Technologies — Mr. Mohammad, Lecturer — UET Peshawar</p>
+      </form>
+    </section>
+  </main>
+
+  <script>
+    (function(){
+      const form = document.getElementById('registrationForm');
+
+      form.addEventListener('submit', function(e){
+        if (!form.checkValidity()) {
+          e.preventDefault();
+
+          // show messages
+          ['name','email','terms','regno','password'].forEach(id=>{
+            const el = document.getElementById(id);
+            const err = document.getElementById('err-' + (id==='password'?'pass':id));
+            if (el && err) err.style.display = el.checkValidity() ? 'none' : 'block';
+          });
+
+          const firstInvalid = form.querySelector(':invalid');
+          if (firstInvalid) firstInvalid.focus();
+        } else {
+          e.preventDefault();
+          alert('Registration submitted (demo). If connected to a form handler, data would be posted.');
+          form.reset();
+        }
+      });
+
+      form.addEventListener('input', function(e){
+        const id = e.target.id;
+        if (id) {
+          const err = document.getElementById('err-' + (id==='password'?'pass':id));
+          if (err) err.style.display = 'none';
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
