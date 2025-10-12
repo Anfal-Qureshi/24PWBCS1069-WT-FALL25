@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Anfal Qureshi — Web Technologies Portfolio</title>
+  <meta name="description" content="Anfal Qureshi — Student | Web Technologies (CS 224L). Portfolio and lab collection." />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* Minimal landing styles (use css/style.css for global rules) */
+    :root {
+      --accent: #0066cc;
+      --muted: #6b7280;
+      --card-bg: #ffffff;
+      --surface: #f7f8fb;
+      --max-w: 1100px;
+    }
+    html,body { height:100%; margin:0; font-family: Inter, Arial, sans-serif; color:#111827; background:var(--surface); }
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 1.6rem; }
+    header { display:flex; align-items:center; gap:1rem; justify-content:space-between; margin-bottom:1rem; }
+    .brand { display:flex; gap:0.75rem; align-items:center; }
+    .brand img { width:48px; height:48px; border-radius:6px; object-fit:cover; border:1px solid #e6e6e6; }
+    .brand h1 { font-size:1.1rem; margin:0; }
+    nav ul { list-style:none; display:flex; gap:0.6rem; margin:0; padding:0; align-items:center; }
+    nav a { text-decoration:none; color:var(--muted); padding:0.45rem 0.6rem; border-radius:6px; font-weight:600; }
+    nav a:hover { background: rgba(0,102,204,0.08); color:var(--accent); }
+
+    /* Hero */
+    .hero { display:grid; grid-template-columns: 1fr 360px; gap:1.2rem; align-items:center; margin-top:1rem; }
+    .intro { background:var(--card-bg); padding:1.2rem; border-radius:10px; box-shadow: 0 6px 18px rgba(15,23,42,0.05); }
+    .intro h2 { margin:0 0 0.4rem 0; font-size:1.4rem; }
+    .intro p { margin:0 0 0.8rem 0; color:var(--muted); }
+    .cta { display:flex; gap:0.6rem; flex-wrap:wrap; }
+    .btn { background:var(--accent); color:#fff; padding:0.55rem 0.8rem; border-radius:8px; text-decoration:none; font-weight:700; }
+    .btn.secondary { background:transparent; color:var(--accent); border:1px solid rgba(0,102,204,0.12); }
+
+    /* Card with quick links */
+    .card { padding:1rem; border-radius:10px; background:var(--card-bg); box-shadow: 0 6px 18px rgba(15,23,42,0.04); }
+    .card h3 { margin:0 0 0.6rem 0; font-size:1.05rem; }
+    .links { display:flex; flex-direction:column; gap:0.45rem; }
+    .links a { color:var(--accent); text-decoration:none; font-weight:600; }
+
+    /* Footer */
+    footer { margin-top:1.2rem; text-align:center; color:var(--muted); font-size:0.9rem; }
+
+    /* Responsive */
+    @media (max-width:920px) {
+      .hero { grid-template-columns: 1fr; }
+      .brand img { width:42px; height:42px; }
+      nav ul { gap:0.35rem; font-size:0.95rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <!-- small UET or personal logo (place an image at css/images or images/) -->
+        <img src="WT_Lab02/images/profile.jpg" alt="Anfal Qureshi photo" onerror="this.style.display='none'">
+        <div>
+          <h1>Anfal Qureshi</h1>
+          <div style="font-size:0.8rem;color:var(--muted)">CS Student — UET Peshawar</div>
+        </div>
+      </div>
+
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="WT_Lab02/">Labs</a></li>
+          <li><a href="WT_Lab02/profile.html">Profile</a></li>
+          <li><a href="WT_Lab02/schedule.html">Schedule</a></li>
+          <li><a href="WT_Lab02/registration.html">Registration</a></li>
+          <li><a href="https://github.com/Anfal-Qureshi" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://uetpeshawar.edu.pk" target="_blank" rel="noopener">UET</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="hero" role="main">
+      <section class="intro" aria-labelledby="intro-title">
+        <h2 id="intro-title">Hello — I'm Anfal Qureshi</h2>
+        <p>Computer Science student at UET Peshawar. I build web pages and exercises for CS 224L — Web Technologies. Here you’ll find my lab work, assignments, and small portfolio projects demonstrating HTML, CSS, and GitHub Pages deployment.</p>
+
+        <div class="cta">
+          <a class="btn" href="WT_Lab02/">Open Labs</a>
+          <a class="btn secondary" href="WT_Lab02/profile.html">View Profile</a>
+          <a class="btn secondary" href="WT_Lab02/schedule.html">View Schedule</a>
+        </div>
+
+        <ul style="margin-top:0.9rem;color:var(--muted);font-size:0.95rem">
+          <li><strong>Department:</strong> Computer Science</li>
+          <li><strong>Course:</strong> CS 224L — Web Technologies (Mr. Mohammad)</li>
+          <li><strong>University:</strong> University of Engineering &amp; Technology, Peshawar</li>
+        </ul>
+      </section>
+
+      <aside class="card" aria-labelledby="quick-links">
+        <h3 id="quick-links">Quick Links</h3>
+        <nav class="links" aria-label="Quick links">
+          <a href="WT_Lab02/profile.html">Profile</a>
+          <a href="WT_Lab02/schedule.html">Schedule</a>
+          <a href="WT_Lab02/registration.html">Registration Form</a>
+          <a href="WT_Lab02/navigation.html">Navigation Demo</a>
+          <a href="https://github.com/Anfal-Qureshi" target="_blank" rel="noopener">My GitHub</a>
+        </nav>
+      </aside>
+    </main>
+
+    <footer>
+      <p>CS 224L — Web Technologies | Mr. Mohammad • UET Peshawar</p>
+      <p style="font-size:0.85rem;color:var(--muted)">Published via GitHub Pages — <a href="https://github.com/Anfal-Qureshi/24PWBCS1069-WT-FALL25" target="_blank" rel="noopener">Repository</a></p>
+    </footer>
+  </div>
+</body>
+</html>
