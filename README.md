@@ -6,4 +6,4 @@ This repository contains all my HTML lab exercises and my portfolio site.
 - Courses
 - Contact
 ## Deployed Site
-[Visit my GitHub Pages site](https://username.github.io/repo-name)
+[Visit my GitHub Pages site](https://github.com/Anfal-Qureshi/24PWBCS1069-WT-FALL25.git)
