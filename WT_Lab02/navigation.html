@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Navigation Menu - Lab 02</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* Inline styles just for Task 3 */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #004a99;
+      color: white;
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #0066cc;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav li {
+      margin: 0 15px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      padding: 40px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+
+    footer {
+      background-color: #f8f8f8;
+      text-align: center;
+      padding: 10px 0;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Navigation Menu Example</h1>
+  </header>
+
+  <!-- ✅ Semantic navigation -->
+  <nav>
+    <ul>
+      <!-- Internal page links -->
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#courses">Courses</a></li>
+      <li><a href="#contact">Contact</a></li>
+
+      <!-- External link -->
+      <li><a href="https://www.uetpeshawar.edu.pk" target="_blank">UET Website</a></li>
+    </ul>
+  </nav>
+
+  <!-- Internal sections (Anchor link targets) -->
+  <main>
+    <section id="home">
+      <h2>Home</h2>
+      <p>Welcome to the homepage of our Web Technologies Lab. Explore various HTML and CSS exercises here.</p>
+    </section>
+
+    <section id="about">
+      <h2>About</h2>
+      <p>This lab focuses on learning basic web design concepts including HTML5 structure, styling, and GitHub hosting.</p>
+    </section>
+
+    <section id="courses">
+      <h2>Courses</h2>
+      <p>Currently enrolled courses include:</p>
+      <ul style="list-style: none; padding: 0;">
+        <li>• Operating Systems</li>
+        <li>• Artificial Intelligence</li>
+        <li>• Web Technologies</li>
+        <li>• Intro. to Data Science</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>For queries, email: <a href="mailto:anfal.qureshi@example.com">anfal.qureshi@example.com</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>CS 224L - Web Technologies | University of Engineering & Technology, Peshawar</p>
+  </footer>
+
+</body>
+</html>
