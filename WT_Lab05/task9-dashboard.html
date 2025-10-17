@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Dashboard Layout</title>
+<style>
+  body{font-family:Inter,system-ui;margin:0;background:#f3f4f6}
+  .app{display:grid;grid-template-columns:240px 1fr;min-height:100vh}
+  .sidebar{background:#0f172a;color:#fff;padding:16px;position:sticky;top:0}
+  .main{padding:20px}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .stat{background:#fff;padding:14px;border-radius:8px;display:flex;flex-direction:column;justify-content:center}
+  @media (max-width:900px){ .app{grid-template-columns:72px 1fr} .sidebar{overflow:hidden} }
+  @media (max-width:600px){ .app{grid-template-columns:1fr} .grid{grid-template-columns:1fr} .sidebar{position:relative} }
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <h2 style="margin-top:0">Menu</h2>
+    <nav>
+      <a href="#" style="color:inherit;display:block;padding:8px 0;text-decoration:none">Overview</a>
+      <a href="#" style="color:inherit;display:block;padding:8px 0;text-decoration:none">Reports</a>
+    </nav>
+  </aside>
+
+  <main class="main">
+    <h1>Admin Dashboard</h1>
+    <div class="grid">
+      <div class="stat"><strong>Users</strong><span>1,234</span></div>
+      <div class="stat"><strong>Revenue</strong><span>$12,345</span></div>
+      <div class="stat"><strong>Errors</strong><span>5</span></div>
+    </div>
+
+    <section style="margin-top:20px">
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <div style="flex:1;background:#fff;padding:12px;border-radius:8px">Chart area (Grid)</div>
+        <div style="width:320px;background:#fff;padding:12px;border-radius:8px">Recent activity (Flex inside)</div>
+      </div>
+    </section>
+  </main>
+</div>
+</body>
+</html>

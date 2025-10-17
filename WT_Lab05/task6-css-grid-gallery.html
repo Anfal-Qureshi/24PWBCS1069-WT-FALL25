@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>CSS Grid Photo Gallery</title>
+<style>
+  body{font-family:system-ui;margin:0;padding:20px;background:#f7fafc}
+  .gallery{display:grid;grid-auto-rows:8px;gap:8px;grid-template-columns:repeat(auto-fill,minmax(180px,1fr))}
+  .item{background:#ddd;border-radius:6px;overflow:hidden;position:relative}
+  /* Masonry effect: span rows based on image height */
+  .item img{width:100%;height:auto;display:block}
+  /* place some items larger on desktop */
+  @media(min-width:900px){
+    .item.large{grid-row-end:span 36}
+    .item.medium{grid-row-end:span 24}
+  }
+  @media(max-width:899px){
+    .item{grid-row-end:span 24}
+  }
+  .overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent,rgba(0,0,0,.35));opacity:0;transition:opacity .18s;color:#fff;display:flex;align-items:flex-end;padding:8px}
+  .item:hover .overlay{opacity:1}
+</style>
+</head>
+<body>
+<h1>Responsive Photo Gallery</h1>
+<div class="gallery">
+  <div class="item large"><img src="https://picsum.photos/600/400?random=1" alt=""><div class="overlay">Caption 1</div></div>
+  <div class="item medium"><img src="https://picsum.photos/400/500?random=2" alt=""><div class="overlay">Caption 2</div></div>
+  <div class="item"><img src="https://picsum.photos/500/300?random=3" alt=""><div class="overlay">Caption 3</div></div>
+  <div class="item medium"><img src="https://picsum.photos/400/450?random=4" alt=""><div class="overlay">Caption 4</div></div>
+  <div class="item large"><img src="https://picsum.photos/700/500?random=5" alt=""><div class="overlay">Caption 5</div></div>
+  <div class="item"><img src="https://picsum.photos/450/300?random=6" alt=""><div class="overlay">Caption 6</div></div>
+</div>
+</body>
+</html>

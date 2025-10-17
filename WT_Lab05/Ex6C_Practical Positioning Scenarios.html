@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Part C Exercise 6: Practical Positioning Scenarios</title>
+  <style>
+    body { font-family: Arial, sans-serif; }
+    h2 { border-bottom: 1px solid #aaa; }
+    section { margin-bottom: 30px; }
+    .relative-demo { position: relative; width: 220px; height: 110px; }
+    .overlap1 {
+      position: absolute; left: 20px; top: 20px;
+      width: 120px; height: 80px; background: #b2dfdb; z-index: 1;
+      border: 1px solid #888;
+    }
+    .overlap2 {
+      position: absolute; left: 60px; top: 50px;
+      width: 120px; height: 80px; background: #ffccbc; z-index: 2;
+      border: 1px solid #888;
+    }
+    .modal-container { position: relative; height: 180px; margin-bottom: 10px; }
+    .modal-demo {
+      position: absolute; left: 30px; top: 40px; width: 200px;
+      background: #e1bee7; padding: 10px; border: 1px solid #888;
+    }
+    .sticky-header {
+      position: sticky; top: 0; background: #90caf9; padding: 10px;
+    }
+    .tooltip-wrap {
+      position: relative; display: inline-block; margin-right: 20px;
+    }
+    .tooltip-text {
+      visibility: visible;
+      position: absolute; bottom: 120%; left: 0;
+      background: #ffecb3; padding: 4px; border: 1px solid #aaa;
+      font-size: 0.9em;
+      z-index: 10;
+    }
+    .dropdown-wrap {
+      position: relative; display: inline-block;
+    }
+    .dropdown-menu {
+      position: absolute; top: 100%; left: 0;
+      background: #f0f4c3; border: 1px solid #ccc; min-width: 100px;
+      z-index: 10;
+    }
+    .dropdown-menu a { display: block; text-decoration: none; color: #222; padding: 2px 6px; }
+    .dropdown-menu a:hover { background: #e0e0e0; }
+  </style>
+</head>
+<body>
+  <h1>Part C: CSS Positioning (Exercise 6)</h1>
+  <h3>CS 224L Web Technologies<br>Mr. Mohammad, Lecturer<br>UET Peshawar</h3>
+
+  <section>
+    <h2>1. Overlapping elements with z-index</h2>
+    <div class="relative-demo">
+      <div class="overlap1">Box 1</div>
+      <div class="overlap2">Box 2 (on top)</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>2. Modal dialog with absolute positioning</h2>
+    <div class="modal-container">
+      <button>Open Modal</button>
+      <div class="modal-demo">
+        This is a modal dialog.
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>3. Sticky navigation header</h2>
+    <div class="sticky-header">Sticky Navigation Header</div>
+    <div style="height: 300px;">Scroll down to see the header stick.</div>
+  </section>
+
+  <section>
+    <h2>4. Tooltips and dropdown menus</h2>
+    <div class="tooltip-wrap">
+      Hover me
+      <span class="tooltip-text">Tooltip text</span>
+    </div>
+    <div class="dropdown-wrap">
+      <button>Dropdown</button>
+      <div class="dropdown-menu">
+        <a href="#">Item 1</a>
+        <a href="#">Item 2</a>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

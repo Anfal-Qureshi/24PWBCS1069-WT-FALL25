@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Display Property Showcase</title>
+<style>
+  body{font-family:system-ui;margin:0;padding:20px;background:#f3f4f6}
+  .section{background:#fff;padding:12px;margin-bottom:12px;border-radius:8px}
+  .inline-demo span{display:inline;background:#eef2ff;padding:6px;margin-right:6px;border-radius:4px}
+  .inlineblock-demo span{display:inline-block;width:120px;text-align:center;background:#fff0f6;padding:8px;margin:6px;border-radius:6px}
+  .block-demo div{display:block;background:#fef3c7;padding:8px;margin:6px;border-radius:6px}
+  .table{display:table;width:100%}
+  .row{display:table-row}
+  .cell{display:table-cell;padding:8px;border:1px solid #e5e7eb}
+  .hidden-small{display:block}
+  @media (max-width:600px){
+    .responsive-change{display:block;background:#d1fae5;padding:8px}
+    .hidden-small{display:none}
+  }
+</style>
+</head>
+<body>
+<h1>Display Property Showcase</h1>
+
+<section class="section">
+  <h2>Block vs Inline vs Inline-block</h2>
+  <div class="inline-demo"><span>inline1</span><span>inline2</span><span>inline3</span></div>
+  <div class="inlineblock-demo"><span>inline-block A</span><span>inline-block B</span><span>inline-block C longer</span></div>
+  <div class="block-demo"><div>Block item 1</div><div>Block item 2</div></div>
+</section>
+
+<section class="section">
+  <h2>Table display without table markup</h2>
+  <div class="table" role="table">
+    <div class="row" role="row">
+      <div class="cell">Header A</div>
+      <div class="cell">Header B</div>
+      <div class="cell">Header C</div>
+    </div>
+    <div class="row" role="row">
+      <div class="cell">Cell 1</div>
+      <div class="cell">Cell 2</div>
+      <div class="cell">Cell 3</div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Responsive display changes & hidden elements</h2>
+  <div class="responsive-change">This becomes block on small screens (≤600px)</div>
+  <div class="hidden-small">This is hidden on small screens</div>
+</section>
+
+</body>
+</html>

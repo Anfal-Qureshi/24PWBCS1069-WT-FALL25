@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 2 - Display in Navigation</title>
+
+  <style>
+    
+    .horizontal-nav a {
+      display: inline-block;
+      padding: 8px;
+      background-color: lightblue;
+      text-decoration: none;
+    }
+
+    
+    .vertical-nav a {
+      display: block;
+      padding: 8px;
+      background-color: lightgreen;
+      text-decoration: none;
+    }
+
+    select {
+      display: inline-block;
+      padding: 5px;
+      background-color: lightgray;
+    }
+
+    
+    .table {
+      display: table;
+      border: 1px solid black;
+      margin-top: 10px;
+    }
+
+    .row {
+      display: table-row;
+    }
+
+    .cell {
+      display: table-cell;
+      border: 1px solid black;
+      padding: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <h3>1. Horizontal Navigation</h3>
+  <nav class="horizontal-nav">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <h3>2. Vertical Navigation</h3>
+  <nav class="vertical-nav">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <h3>3. Dropdown Menu (using select)</h3>
+  <select>
+    <option selected disabled>Select an option</option>
+    <option>HTML</option>
+    <option>CSS</option>
+    <option>JavaScript</option>
+  </select>
+
+  <h3>4. Table-like Layout</h3>
+  <div class="table">
+    <div class="row">
+      <div class="cell">Name</div>
+      <div class="cell">Age</div>
+      <div class="cell">City</div>
+    </div>
+    <div class="row">
+      <div class="cell">Ali</div>
+      <div class="cell">20</div>
+      <div class="cell">Karachi</div>
+    </div>
+    <div class="row">
+      <div class="cell">Sara</div>
+      <div class="cell">22</div>
+      <div class="cell">Lahore</div>
+    </div>
+  </div>
+</body>
+</html>

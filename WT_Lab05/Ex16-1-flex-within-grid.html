@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Flexbox inside Grid - Example</title>
+<style>
+  :root{--gap:16px;--card-bg:#fff;--muted:#666}
+  body{font-family:system-ui,Segoe UI,Roboto,Helvetica,Arial;line-height:1.4;margin:0;padding:24px;background:#f3f4f6}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:var(--gap)}
+  .card{background:var(--card-bg);padding:16px;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+  /* Flex inside each grid item */
+  .card .row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+  .avatar{width:56px;height:56px;border-radius:8px;background:linear-gradient(135deg,#6ee7b7,#3b82f6)}
+  .meta{flex:1;min-width:0}
+  .title{font-weight:700;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+  .subtitle{color:var(--muted);font-size:0.95rem}
+  /* Demonstrate responsive change */
+  @media (max-width:520px){
+    .grid{grid-template-columns:1fr}
+    .card .row{flex-direction:column;align-items:flex-start}
+    .avatar{width:72px;height:72px}
+  }
+</style>
+</head>
+<body>
+<h1>Flex inside Grid</h1>
+<p>Grid handles global layout, while flex organizes content inside each card.</p>
+
+<div class="grid" role="list">
+  <article class="card" role="listitem">
+    <div class="row">
+      <div class="avatar" aria-hidden="true"></div>
+      <div class="meta">
+        <div class="title">Project A with a long title to test truncation</div>
+        <div class="subtitle">Short description • Updated 2 days ago</div>
+      </div>
+      <div style="margin-left:auto;color:#0ea5a4">Active</div>
+    </div>
+  </article>
+
+  <article class="card" role="listitem">
+    <div class="row">
+      <div class="avatar" style="background:linear-gradient(135deg,#fbcfe8,#a78bfa)"></div>
+      <div class="meta">
+        <div class="title">Project B</div>
+        <div class="subtitle">An intermediate example</div>
+      </div>
+      <div style="margin-left:auto;color:#ef4444">Paused</div>
+    </div>
+  </article>
+
+  <article class="card" role="listitem">
+    <div class="row">
+      <div class="avatar" style="background:linear-gradient(135deg,#fde68a,#fb923c)"></div>
+      <div class="meta">
+        <div class="title">Project C</div>
+        <div class="subtitle">Flexbox aligns buttons & content</div>
+      </div>
+      <div style="margin-left:auto;color:#6366f1">Draft</div>
+    </div>
+  </article>
+</div>
+
+</body>
+</html>

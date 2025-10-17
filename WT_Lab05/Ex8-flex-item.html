@@ -1,0 +1,51 @@
+<!-- Exercise 8: Flex Item Properties -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flex Item Properties</title>
+  <style>
+    .flex-container {
+      display: flex;
+      gap: 15px;
+      border: 2px solid #222;
+      padding: 10px;
+    }
+    .item1 {
+      background: #64b5f6;
+      flex-grow: 2;
+      flex-shrink: 1;
+      flex-basis: 100px;
+      order: 2;
+    }
+    .item2 {
+      background: #81c784;
+      flex: 1 2 120px; /* shorthand: grow shrink basis */
+      align-self: flex-start;
+      order: 1;
+    }
+    .item3 {
+      background: #ffd54f;
+      flex: 1 1 80px;
+      align-self: flex-end;
+      order: 3;
+    }
+    .flex-item {
+      color: #222;
+      padding: 25px;
+      border-radius: 5px;
+      min-width: 50px;
+      text-align: center;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h2>Flex Item Properties</h2>
+  <div class="flex-container">
+    <div class="flex-item item1">Item 1</div>
+    <div class="flex-item item2">Item 2</div>
+    <div class="flex-item item3">Item 3</div>
+  </div>
+</body>
+</html>

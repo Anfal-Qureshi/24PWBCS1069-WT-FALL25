@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Flexbox Card Layout</title>
+<style>
+  body{font-family:system-ui;margin:0;padding:20px;background:#f8fafc}
+  .grid{display:flex;flex-wrap:wrap;gap:16px;justify-content:center}
+  .card{background:#fff;border-radius:8px;box-shadow:0 6px 20px rgba(2,6,23,.06);display:flex;flex-direction:column;flex:1 1 300px;max-width:320px}
+  .card .body{padding:16px;flex:1;display:flex;flex-direction:column}
+  .title{font-weight:700;margin-bottom:8px}
+  .actions{display:flex;gap:8px;margin-top:auto;padding:12px;border-top:1px solid #eef2f7}
+  /* Equal heights: ensure cards grow to same height via align-items and stretch */
+  .grid > .card{align-self:stretch}
+  @media (max-width:700px){ .card{flex-basis:100%;max-width:none} }
+  @media (min-width:701px) and (max-width:1000px){ .card{flex-basis:45%} }
+  @media (min-width:1001px){ .card{flex-basis:30%} }
+</style>
+</head>
+<body>
+<h1 style="text-align:center">Cards — Equal Height & Responsive</h1>
+<div class="grid" role="list">
+  <article class="card" role="listitem">
+    <div class="body">
+      <div class="title">Card One</div>
+      <div class="desc">Short content.</div>
+    </div>
+    <div class="actions">
+      <button>Share</button><button>Open</button>
+    </div>
+  </article>
+
+  <article class="card" role="listitem">
+    <div class="body">
+      <div class="title">Card Two</div>
+      <div class="desc">Longer content that makes this card naturally taller. Flexbox ensures actions stay aligned at the bottom.</div>
+    </div>
+    <div class="actions">
+      <button>Share</button><button>Open</button>
+    </div>
+  </article>
+
+  <article class="card" role="listitem">
+    <div class="body">
+      <div class="title">Card Three</div>
+      <div class="desc">Medium content.</div>
+    </div>
+    <div class="actions">
+      <button>Share</button><button>Open</button>
+    </div>
+  </article>
+</div>
+</body>
+</html>

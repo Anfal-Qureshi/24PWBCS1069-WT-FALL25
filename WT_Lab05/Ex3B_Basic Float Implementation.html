@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Part B Exercise 3: Float Basics</title>
+  <style>
+    /* Float image with text wrapping */
+    .float-img {
+      float: left;
+      margin-right: 10px;
+      width: 120px;
+    }
+    /* Two-column layout */
+    .two-col {
+      float: left;
+      width: 48%;
+      margin-right: 2%;
+      background: #e0e0e0;
+      min-height: 80px;
+    }
+    .two-col:last-child { margin-right: 0; }
+    /* Three-column layout */
+    .three-col {
+      float: left;
+      width: 32%;
+      margin-right: 2%;
+      background: #d0f0c0;
+      min-height: 70px;
+    }
+    .three-col:last-child { margin-right: 0; }
+    /* Float boxes for clearfix practice */
+    .float-box {
+      float: left;
+      width: 45%;
+      margin: 2%;
+      background: #ede7f6;
+      min-height: 40px;
+    }
+    /* Clearfix utility */
+    .clearfix::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    body { font-family: Arial, sans-serif; }
+    h2 { border-bottom: 1px solid #aaa; }
+    section { margin-bottom: 30px; }
+  </style>
+</head>
+<body>
+  <h1>Part B: Float-Based Layouts (Exercise 3)</h1>
+  
+  <section>
+    <h2>1. Float image with text wrapping</h2>
+    <img src="images/img.png" alt="Example" class="float-img">
+    <p>
+      This is some sample text that wraps around the floated image. The image is floated to the left and this text will flow around it naturally. Clearfix can be used to clear the float below.
+    </p>
+    <div style="clear: both;"></div>
+  </section>
+
+  <section>
+    <h2>2. Two-column layout using floats</h2>
+    <div class="clearfix">
+      <div class="two-col">Left Column</div>
+      <div class="two-col">Right Column</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>3. Three-column float layout</h2>
+    <div class="clearfix">
+      <div class="three-col">Column 1</div>
+      <div class="three-col">Column 2</div>
+      <div class="three-col">Column 3</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>4. Practice clearing floats with clearfix</h2>
+    <div class="clearfix">
+      <div class="float-box">Box 1</div>
+      <div class="float-box">Box 2</div>
+      <p>This text is below the floated boxes, thanks to clearfix.</p>
+    </div>
+    
+  </section>
+</body>
+</html>

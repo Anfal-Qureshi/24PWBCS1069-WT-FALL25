@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Responsive Utility Classes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    /* Show/hide utilities */
+    .d-block { display: block !important; }
+    .d-none { display: none !important; }
+    /* Show only on mobile */
+    .show-mobile { display: block; }
+    .hide-mobile { display: none; }
+    @media (min-width: 768px) {
+      .show-mobile { display: none !important; }
+      .hide-mobile { display: block !important; }
+      .show-tablet { display: block !important; }
+      .hide-tablet { display: none !important; }
+    }
+    @media (min-width: 1024px) {
+      .show-desktop { display: block !important; }
+      .hide-desktop { display: none !important; }
+    }
+    /* Responsive Spacing */
+    .m-1 { margin: .5rem !important; }
+    .p-2 { padding: 1rem !important; }
+    @media (min-width: 768px) {
+      .m-md-2 { margin: 1.5rem !important; }
+      .p-md-4 { padding: 2rem !important; }
+    }
+    @media (min-width: 1024px) {
+      .m-lg-3 { margin: 2.5rem !important; }
+      .p-lg-5 { padding: 3rem !important; }
+    }
+    /* Text Alignment */
+    .text-center { text-align: center !important; }
+    .text-left { text-align: left !important; }
+    .text-right { text-align: right !important; }
+    @media (min-width: 768px) {
+      .text-md-left { text-align: left !important; }
+      .text-md-center { text-align: center !important; }
+      .text-md-right { text-align: right !important; }
+    }
+    /* Flex Utilities */
+    .flex { display: flex !important; }
+    .flex-column { flex-direction: column !important; }
+    .flex-row { flex-direction: row !important; }
+    .justify-center { justify-content: center !important; }
+    .align-center { align-items: center !important; }
+    @media (min-width: 768px) {
+      .flex-md-row { flex-direction: row !important; }
+      .flex-md-column { flex-direction: column !important; }
+    }
+    @media (min-width: 1200px) {
+      .flex-lg-row { flex-direction: row !important; }
+      .flex-lg-column { flex-direction: column !important; }
+    }
+    /* Demo styles */
+    .utility-demo {
+      background: #f3f6f9;
+      border-radius: 8px;
+      margin: 1rem;
+      padding: 1rem;
+      font-size: 1.1rem;
+    }
+    .box {
+      background: #bbdefb;
+      border-radius: 5px;
+      padding: 1rem;
+      margin: .5rem;
+      min-width: 80px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="utility-demo">
+    <h3 class="text-center">Responsive Utility Classes</h3>
+    <div class="show-mobile box">Visible on Mobile</div>
+    <div class="hide-mobile box">Hidden on Mobile, visible Tablet+</div>
+    <div class="show-tablet box">Visible on Tablet+</div>
+    <div class="show-desktop box">Visible on Desktop+</div>
+
+    <div class="flex flex-column flex-md-row justify-center align-center m-1 p-2 m-md-2 p-md-4">
+      <div class="box text-left text-md-right">Flexbox Utility 1</div>
+      <div class="box text-center">Flexbox Utility 2</div>
+      <div class="box text-right text-md-left">Flexbox Utility 3</div>
+    </div>
+  </div>
+</body>
+</html>

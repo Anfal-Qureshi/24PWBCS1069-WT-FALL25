@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Responsive Data Table</title>
+<style>
+  body{font-family:system-ui;margin:0;padding:20px;background:#f7fafc}
+  table{width:100%;border-collapse:collapse;background:#fff;border-radius:8px;overflow:hidden}
+  th,td{padding:12px;border-bottom:1px solid #eef2f7;text-align:left}
+  @media (max-width:900px){
+    /* Tablet: show as cards */
+    table,thead,tbody,tr,th,td{display:block}
+    thead{display:none}
+    tr{margin-bottom:12px;background:#fff;padding:12px;border-radius:8px}
+    td{border:none;padding:6px 12px}
+    td::before{content:attr(data-label);font-weight:700;display:block;color:#6b7280}
+  }
+  @media (max-width:520px){
+    /* Mobile: stacked single column (same as tablet layout but condensed) */
+  }
+</style>
+</head>
+<body>
+<h1>Users</h1>
+<table>
+  <thead>
+    <tr><th>Name</th><th>Email</th><th>Role</th><th>Status</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-label="Name">Alice</td>
+      <td data-label="Email">alice@example.com</td>
+      <td data-label="Role">Admin</td>
+      <td data-label="Status">Active</td>
+    </tr>
+    <tr>
+      <td data-label="Name">Bob</td>
+      <td data-label="Email">bob@example.com</td>
+      <td data-label="Role">Editor</td>
+      <td data-label="Status">Pending</td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>

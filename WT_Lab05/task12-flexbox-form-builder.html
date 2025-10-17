@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Flexbox Form Builder</title>
+<style>
+  body{font-family:system-ui;margin:0;padding:20px;background:#f7fafc}
+  form{max-width:760px;margin:0 auto;background:#fff;padding:16px;border-radius:8px;box-shadow:0 6px 20px rgba(2,6,23,.04)}
+  .row{display:flex;gap:12px;margin-bottom:12px;align-items:flex-start}
+  .col{flex:1;min-width:0}
+  label{display:block;margin-bottom:6px;font-weight:600}
+  input,select,textarea{width:100%;padding:8px;border:1px solid #e6edf3;border-radius:6px}
+  @media (max-width:720px){ .row{flex-direction:column} }
+</style>
+</head>
+<body>
+<h1 style="text-align:center">Responsive Form</h1>
+<form>
+  <div class="row">
+    <div class="col"><label>First name<input type="text"></label></div>
+    <div class="col"><label>Last name<input type="text"></label></div>
+  </div>
+
+  <div class="row">
+    <div class="col"><label>Email<input type="email"></label></div>
+    <div class="col"><label>Phone<input type="tel"></label></div>
+  </div>
+
+  <div class="row">
+    <div class="col"><label>Country<select><option>Pakistan</option><option>USA</option></select></label></div>
+    <div class="col"><label>Subscribe<input type="checkbox"></label></div>
+  </div>
+
+  <div class="row">
+    <div class="col"><label>Message<textarea rows="4"></textarea></label></div>
+  </div>
+
+  <div style="text-align:right">
+    <button type="submit" style="padding:8px 14px">Submit</button>
+  </div>
+</form>
+</body>
+</html>

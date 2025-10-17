@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Flexbox Navigation System</title>
+<style>
+  :root{--nav-bg:#111827}
+  body{font-family:system-ui;margin:0}
+  .nav{display:flex;align-items:center;justify-content:space-between;background:var(--nav-bg);color:#fff;padding:10px 16px}
+  .brand{font-weight:700}
+  .menu{display:flex;gap:12px;align-items:center}
+  .menu a{color:#fff;text-decoration:none;padding:8px;border-radius:6px}
+  .hamburger{display:none;background:transparent;border:none;color:#fff;font-size:20px}
+  .mobile-drawer{display:none;position:fixed;left:0;top:0;right:0;bottom:0;background:rgba(0,0,0,.4);z-index:60}
+  .drawer-panel{background:#fff;color:#111;padding:16px;width:260px;height:100%;transform:translateX(-100%);transition:transform .28s}
+  .drawer-panel.open{transform:translateX(0)}
+  .dropdown{position:relative}
+  .dropdown-menu{position:absolute;top:calc(100% + 6px);left:0;background:#fff;color:#111;padding:8px;border-radius:6px;display:none;min-width:140px;box-shadow:0 8px 20px rgba(2,6,23,.08)}
+  .dropdown:hover .dropdown-menu{display:block}
+  @media (max-width:720px){
+    .menu{display:none}
+    .hamburger{display:block}
+  }
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="brand">Brand</div>
+  <div class="menu" role="navigation">
+    <a href="#">Home</a>
+    <div class="dropdown">
+      <a href="#">Projects ▾</a>
+      <div class="dropdown-menu">
+        <a href="#" style="display:block;padding:6px">Project 1</a>
+        <a href="#" style="display:block;padding:6px">Project 2</a>
+      </div>
+    </div>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </div>
+  <button class="hamburger" id="burger" aria-label="Open menu">☰</button>
+</nav>
+
+<div id="mobile" class="mobile-drawer" aria-hidden="true">
+  <div class="drawer-panel" id="panel">
+    <button id="close" style="background:none;border:none;font-size:20px;margin-bottom:12px">✕</button>
+    <nav>
+      <a href="#" style="display:block;padding:8px 0">Home</a>
+      <details>
+        <summary style="cursor:pointer">Projects</summary>
+        <a href="#" style="display:block;padding:6px 12px">Project 1</a>
+        <a href="#" style="display:block;padding:6px 12px">Project 2</a>
+      </details>
+      <a href="#" style="display:block;padding:8px 0">About</a>
+      <a href="#" style="display:block;padding:8px 0">Contact</a>
+    </nav>
+  </div>
+</div>
+
+<script>
+  const burger = document.getElementById('burger');
+  const mobile = document.getElementById('mobile');
+  const panel = document.getElementById('panel');
+  const close = document.getElementById('close');
+  burger.addEventListener('click', ()=> { mobile.style.display='block'; setTimeout(()=>panel.classList.add('open'),10) });
+  close.addEventListener('click', ()=> { panel.classList.remove('open'); setTimeout(()=>mobile.style.display='none',300) });
+  mobile.addEventListener('click', e=> { if(e.target===mobile){ panel.classList.remove('open'); setTimeout(()=>mobile.style.display='none',300) } });
+</script>
+</body>
+</html>

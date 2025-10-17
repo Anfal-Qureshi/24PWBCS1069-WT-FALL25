@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dark Mode & Preference Media Queries</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      background: #fff;
+      color: #212121;
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      transition: background .3s, color .3s;
+    }
+    .pref-demo {
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 2rem;
+      border-radius: 12px;
+      background: #f3f6f9;
+      box-shadow: 0 2px 12px #2222;
+      font-size: 1.2rem;
+    }
+    /* Dark Mode */
+    @media (prefers-color-scheme: dark) {
+      body { background: #121212; color: #eee; }
+      .pref-demo { background: #212121; color: #fff; }
+    }
+    /* Reduced Motion */
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
+      .pref-demo { box-shadow: none; }
+    }
+    /* High Contrast */
+    @media (prefers-contrast: more) {
+      body { background: #000; color: #fff; }
+      .pref-demo {
+        background: #fff;
+        color: #000;
+        border: 3px solid #000;
+      }
+    }
+    /* Print Styles */
+    @media print {
+      body { background: #fff !important; color: #000 !important; }
+      .pref-demo { background: none !important; color: #000 !important; box-shadow: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="pref-demo">
+    <h2>Preference & Accessibility Media Queries</h2>
+    <ul>
+      <li><strong>Dark/Light mode:</strong> Try switching your OS or browser theme.</li>
+      <li><strong>Reduced motion:</strong> Enable reduced motion in system settings.</li>
+      <li><strong>High contrast:</strong> Enable high contrast mode in your OS.</li>
+      <li><strong>Print:</strong> Try printing this page.</li>
+    </ul>
+  </div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Common Breakpoint Implementation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    /* Mobile First: 0-767px */
+    body { font-family: sans-serif; margin: 0; }
+    .demo-box {
+      background: #bbdefb;
+      color: #263238;
+      padding: 2rem 1rem;
+      margin: 1rem;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      text-align: center;
+      transition: background .3s, font-size .3s;
+    }
+    .breakpoint-label {
+      display: inline-block;
+      background: #1565c0;
+      color: #fff;
+      border-radius: 4px;
+      font-size: 1rem;
+      padding: 0.2em 1em;
+      margin-bottom: 1em;
+    }
+    /* Tablet: 768px and up */
+    @media (min-width: 768px) {
+      .demo-box { background: #b2dfdb; font-size: 1.3rem; }
+      .breakpoint-label { background: #00897b; }
+    }
+    /* Small Desktop: 1024px and up */
+    @media (min-width: 1024px) {
+      .demo-box { background: #ffe082; font-size: 1.5rem; }
+      .breakpoint-label { background: #fbc02d; }
+    }
+    /* Large Desktop: 1200px and up */
+    @media (min-width: 1200px) {
+      .demo-box { background: #ffccbc; font-size: 1.7rem; }
+      .breakpoint-label { background: #e64a19; }
+    }
+    /* Extra Large: 1400px and up */
+    @media (min-width: 1400px) {
+      .demo-box { background: #c5e1a5; font-size: 2rem; }
+      .breakpoint-label { background: #388e3c; }
+    }
+  </style>
+  <script>
+    // Display current breakpoint for demo
+    function updateLabel() {
+      let width = window.innerWidth;
+      let label = document.getElementById('breakpoint');
+      if (width >= 1400) label.textContent = "Extra Large (≥1400px)";
+      else if (width >= 1200) label.textContent = "Large Desktop (≥1200px)";
+      else if (width >= 1024) label.textContent = "Small Desktop (≥1024px)";
+      else if (width >= 768) label.textContent = "Tablet (≥768px)";
+      else label.textContent = "Mobile (<768px)";
+    }
+    window.addEventListener('resize', updateLabel);
+    window.addEventListener('DOMContentLoaded', updateLabel);
+  </script>
+</head>
+<body>
+  <div class="demo-box">
+    <span class="breakpoint-label" id="breakpoint"></span>
+    <p>Resize your browser to see styles change at each common breakpoint.</p>
+  </div>
+</body>
+</html>

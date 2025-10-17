@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Grid inside Flex - Example</title>
+<style>
+  :root{--gap:16px}
+  body{font-family:Inter,system-ui;margin:0;padding:24px;background:#fbfbfd}
+  header{display:flex;align-items:center;gap:16px;margin-bottom:24px}
+  .logo{width:48px;height:48px;background:linear-gradient(135deg,#60a5fa,#38bdf8);border-radius:8px}
+  nav{margin-left:auto}
+  /* Flex container holding two grid panels */
+  .flex{display:flex;gap:var(--gap);flex-wrap:wrap}
+  .panel{flex:1 1 320px;background:#fff;padding:16px;border-radius:8px;box-shadow:0 4px 12px rgba(2,6,23,.06)}
+  /* Grid inside panel */
+  .tools-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .tile{background:#eef2ff;padding:12px;border-radius:6px;text-align:center}
+  @media (max-width:700px){
+    .tools-grid{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width:420px){
+    .flex{flex-direction:column}
+    .tools-grid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="logo" aria-hidden="true"></div>
+  <h1 style="margin:0;font-size:1.1rem">Tools Dashboard</h1>
+  <nav>
+    <a href="#" style="color:#0ea5a4;text-decoration:none">Settings</a>
+  </nav>
+</header>
+
+<div class="flex">
+  <section class="panel">
+    <h2 style="margin-top:0">Quick Tools</h2>
+    <div class="tools-grid" role="list">
+      <div class="tile">Converter</div>
+      <div class="tile">Formatter</div>
+      <div class="tile">Linter</div>
+      <div class="tile">Preview</div>
+      <div class="tile">Diff</div>
+      <div class="tile">Deploy</div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2 style="margin-top:0">Stats</h2>
+    <!-- CSS Grid arranging stat cards -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+      <div class="tile" style="background:#ecfeff">Users: 1,234</div>
+      <div class="tile" style="background:#fff7ed">Errors: 12</div>
+      <div class="tile" style="grid-column:1 / -1;background:#eef2ff">Recent Activity</div>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>

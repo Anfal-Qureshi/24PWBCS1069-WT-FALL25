@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Holy Grail Flexbox</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    .hg-layout {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    .hg-header, .hg-footer {
+      background: #bdbdbd;
+      padding: 1rem;
+      text-align: center;
+    }
+    .hg-main-area {
+      display: flex;
+      flex: 1;
+      min-height: 200px;
+    }
+    .hg-sidebar {
+      background: #e1bee7;
+      padding: 1rem;
+      width: 170px;
+      min-width: 80px;
+    }
+    .hg-content {
+      flex: 1;
+      background: #fffde7;
+      padding: 1.2rem;
+    }
+    @media (max-width: 700px) {
+      .hg-main-area { flex-direction: column; }
+      .hg-sidebar { width: auto; min-width: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="hg-layout">
+    <header class="hg-header">Header</header>
+    <div class="hg-main-area">
+      <aside class="hg-sidebar">Left Sidebar</aside>
+      <main class="hg-content">Main Content</main>
+      <aside class="hg-sidebar">Right Sidebar</aside>
+    </div>
+    <footer class="hg-footer">Footer</footer>
+  </div>
+</body>
+</html>

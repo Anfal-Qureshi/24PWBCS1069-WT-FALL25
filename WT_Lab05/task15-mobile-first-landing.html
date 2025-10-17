@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Mobile-First Landing Page</title>
+<style>
+  :root{--accent:#0ea5a4}
+  body{font-family:Inter,system-ui;margin:0;color:#0f172a}
+  header{background:linear-gradient(180deg,#f0fdfa,#ecfeff);padding:24px;text-align:center}
+  .hero{padding:20px;max-width:1000px;margin:0 auto}
+  .cta{display:block;background:var(--accent);color:#fff;padding:12px;border-radius:8px;text-align:center;text-decoration:none;margin-top:12px}
+  /* Mobile-first base: stacked layout */
+  .features{display:grid;gap:12px;margin-top:20px}
+  @media(min-width:700px){
+    .hero{display:flex;align-items:center;gap:20px}
+    .features{grid-template-columns:repeat(3,1fr)}
+    header{padding:36px}
+  }
+  @media(min-width:1100px){
+    .features{gap:18px}
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1 style="margin:0">Product Name</h1>
+  <p style="margin:6px 0 0;color:#065f46">Simple, fast and mobile-first.</p>
+</header>
+
+<section class="hero">
+  <div>
+    <h2>Start building today</h2>
+    <p>Mobile-first base styles with progressive enhancements for larger screens.</p>
+    <a href="#" class="cta">Get Started</a>
+  </div>
+  <div style="background:#fff;padding:16px;border-radius:8px;box-shadow:0 8px 24px rgba(2,6,23,.06);margin-top:12px">Preview panel</div>
+</section>
+
+<section style="max-width:1000px;margin:20px auto">
+  <h3>Features</h3>
+  <div class="features">
+    <div style="background:#fff;padding:12px;border-radius:8px">Fast</div>
+    <div style="background:#fff;padding:12px;border-radius:8px">Responsive</div>
+    <div style="background:#fff;padding:12px;border-radius:8px">Accessible</div>
+  </div>
+</section>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>E-commerce Product Grid</title>
+<style>
+  body{font-family:Inter,system-ui;margin:0;padding:20px;background:#f7fafc}
+  .layout{display:grid;grid-template-columns:260px 1fr;gap:20px;max-width:1200px;margin:0 auto}
+  .filters{background:#fff;padding:12px;border-radius:8px}
+  .grid{display:grid;gap:12px;grid-template-columns:repeat(4,1fr)}
+  .card{background:#fff;padding:12px;border-radius:8px;box-shadow:0 6px 18px rgba(2,6,23,.05)}
+  @media (max-width:1000px){ .grid{grid-template-columns:repeat(2,1fr)} }
+  @media (max-width:600px){ .layout{grid-template-columns:1fr} .grid{grid-template-columns:1fr} .filters{position:fixed;left:0;right:0;top:0;transform:translateY(-120%);transition:transform .25s} .filters.open{transform:translateY(0)} }
+</style>
+</head>
+<body>
+<div style="max-width:1200px;margin:0 auto">
+  <h1>Products</h1>
+  <div class="layout">
+    <aside class="filters">
+      <h3>Filters</h3>
+      <div><label><input type="checkbox"> On sale</label></div>
+      <div><label><input type="checkbox"> In stock</label></div>
+    </aside>
+    <main>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+        <div>Showing 12 products</div>
+        <button id="filtersBtn">Toggle filters (mobile)</button>
+      </div>
+      <div class="grid">
+        <div class="card"><div style="height:140px;background:#e6fdf5;border-radius:6px;margin-bottom:8px"></div><strong>Product A</strong><div>$19.00</div></div>
+        <div class="card"><div style="height:140px;background:#fff0f6;border-radius:6px;margin-bottom:8px"></div><strong>Product B</strong><div>$29.00</div></div>
+        <div class="card"><div style="height:140px;background:#fef3c7;border-radius:6px;margin-bottom:8px"></div><strong>Product C</strong><div>$39.00</div></div>
+        <div class="card"><div style="height:140px;background:#e0f2fe;border-radius:6px;margin-bottom:8px"></div><strong>Product D</strong><div>$49.00</div></div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script>
+  document.getElementById('filtersBtn').addEventListener('click', ()=> {
+    document.querySelector('.filters').classList.toggle('open');
+  });
+</script>
+</body>
+</html>

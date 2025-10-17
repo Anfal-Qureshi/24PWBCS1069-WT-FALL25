@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 1: Display Property Values</title>
+  <style>
+ 
+    div.block-example {
+      display: block;
+      background-color: lightblue;
+      padding: 10px;
+      margin: 5px 0;
+    }
+
+    
+    span.inline-example {
+      display: inline;
+      background-color: lightgreen;
+      padding: 5px;
+      margin: 5px;
+    }
+
+   
+    div.inline-block-example {
+      display: inline-block;
+      background-color: lightcoral;
+      width: 100px;
+      height: 50px;
+      margin: 5px;
+      text-align: center;
+      line-height: 50px;
+    }
+
+    
+    .none-example {
+      display: none;
+    }
+
+    .hidden-example {
+      visibility: hidden;
+    }
+  </style>
+</head>
+<body>
+  <h2> Display:- block</h2>
+  <div class="block-example">I am a block element</div>
+  <div class="block-example">I start on a new line</div>
+
+  <h2> Display:- inline</h2>
+  <p>
+    Inline example:
+    <span class="inline-example">Span 1</span>
+    <span class="inline-example">Span 2</span>
+    (They stay on the same line)
+  </p>
+
+  <h2> Display:- inline-block</h2>
+  <div class="inline-block-example">Box 1</div>
+  <div class="inline-block-example">Box 2</div>
+  <div class="inline-block-example">Box 3</div>
+  <p>(Behaves like inline but you can set width/height)</p>
+
+  <h2> display:- none vs visibility: hidden</h2>
+  <p>
+    <span class="none-example">I am hidden using display:none</span>
+    <span class="hidden-example">I am hidden using visibility:hidden</span>
+    <span style="background:yellow;">I am visible</span>
+  </p>
+  
+</body>
+</html>
+
+

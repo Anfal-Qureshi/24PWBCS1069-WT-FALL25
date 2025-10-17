@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Holy Grail Layout — 3 Methods</title>
+<style>
+  body{font-family:system-ui;margin:0;padding:20px;background:#f8fafc}
+  section{margin-bottom:28px;padding:12px;background:#fff;border-radius:8px;box-shadow:0 6px 20px rgba(2,6,23,.04)}
+  h2{margin-top:0}
+  /* 1. Float-based (mobile-first: stacks) */
+  .float-wrap{overflow:hidden}
+  .float-left{float:left;width:200px;margin-right:16px;background:#eef2ff;padding:8px;border-radius:6px}
+  .float-right{float:right;width:200px;margin-left:16px;background:#fef3c7;padding:8px;border-radius:6px}
+  /* 2. Flexbox (mobile-first) */
+  .flex-layout{display:flex;flex-direction:column}
+  .flex-layout .col{padding:8px}
+  /* 3. Grid */
+  .grid-layout{display:grid;grid-template-areas:"left main right";grid-template-columns:200px 1fr 200px;gap:12px}
+  .grid-layout > *{padding:8px}
+  .left{grid-area:left;background:#eef2ff}
+  .main{grid-area:main;background:#fff}
+  .right{grid-area:right;background:#fef3c7}
+  /* Responsive changes */
+  @media (max-width:800px){
+    .float-left,.float-right{float:none;width:100%;margin:0 0 12px}
+    .flex-layout{flex-direction:column}
+    .grid-layout{grid-template-areas:"main" "left" "right";grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+<section>
+  <h2>1) Float-based Holy Grail</h2>
+  <div class="float-wrap">
+    <aside class="float-left">Left</aside>
+    <aside class="float-right">Right</aside>
+    <main>Main content flows between floated sidebars. Use clearfix (overflow hidden) to contain floats.</main>
+    <div style="clear:both"></div>
+  </div>
+</section>
+
+<section>
+  <h2>2) Flexbox Holy Grail (mobile-first)</h2>
+  <div class="flex-layout" style="border-radius:6px">
+    <main class="col" style="order:2;background:#fff">Main</main>
+    <aside class="col" style="order:1;background:#eef2ff">Left (collapses below)</aside>
+    <aside class="col" style="order:3;background:#fef3c7">Right</aside>
+  </div>
+  <p style="margin-top:8px;color:#6b7280">On small screens the order stacks; on wider screens you would use row direction and reorder using flex properties.</p>
+</section>
+
+<section>
+  <h2>3) CSS Grid Holy Grail</h2>
+  <div class="grid-layout">
+    <aside class="left">Left Sidebar</aside>
+    <main class="main">Main content — grid-template-areas handle layout responsively</main>
+    <aside class="right">Right Sidebar</aside>
+  </div>
+</section>
+</body>
+</html>

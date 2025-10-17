@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Float-Based Magazine Layout</title>
+<style>
+  body{font-family:Georgia,serif;margin:0;padding:20px;background:#fffdf8;color:#111}
+  .container{max-width:960px;margin:0 auto}
+  .header{margin-bottom:18px}
+  .columns{overflow:hidden}
+  .column{float:left;width:65%;padding-right:20px}
+  .sidebar{float:right;width:30%;background:#f8fafc;padding:12px;border-radius:6px}
+  .article img{float:right;width:200px;margin:0 0 12px 12px;border-radius:6px}
+  .multi-col{column-count:2;column-gap:24px}
+  @media (max-width:760px){
+    .column,.sidebar{float:none;width:100%}
+    .multi-col{column-count:1}
+    .article img{float:none;display:block;width:100%;margin-bottom:12px}
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <header class="header">
+    <h1 style="margin:0">Magazine — Float Only for Layout Inside Areas</h1>
+    <p style="color:#6b7280">A float-based article layout that becomes single column on mobile.</p>
+  </header>
+
+  <div class="columns">
+    <main class="column">
+      <article class="article">
+        <h2>Featured Story</h2>
+        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='400'><rect width='100%' height='100%' fill='%23fde68a'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23111' font-size='24'>Image</text></svg>" alt="">
+        <div class="multi-col">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus interdum, mauris nec venenatis feugiat, urna lectus convallis justo, sit amet mollis urna dui vel est. Integer in elit id arcu vestibulum dictum.</p>
+          <p>Quisque a ligula at arcu tincidunt posuere. Sed mattis, sapien at elementum iaculis, augue nunc posuere erat, nec varius orci est sed arcu.</p>
+        </div>
+      </article>
+
+      <section style="margin-top:20px">
+        <h3>Wrapped image example</h3>
+        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='200'><rect width='100%' height='100%' fill='%23bfdbfe'/></svg>" alt="" style="float:left;margin-right:12px;width:140px">
+        <p>Text wraps around this small image using float. On mobile, the image becomes block and stacks above text.</p>
+        <div style="clear:both"></div>
+      </section>
+    </main>
+
+    <aside class="sidebar">
+      <h4>Sidebar</h4>
+      <p>Promotions and links that float to the right on larger screens and move below on mobile.</p>
+    </aside>
+  </div>
+</div>
+</body>
+</html>

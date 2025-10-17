@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Complex Flexbox Form Layout</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    form.form-flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      background: #f3f6f9;
+      padding: 2rem;
+      border-radius: 10px;
+      max-width: 700px;
+      margin: 2rem auto;
+    }
+    .field-group {
+      flex: 1 1 220px;
+      display: flex;
+      flex-direction: column;
+    }
+    label { margin-bottom: 0.5em; }
+    input, select, textarea {
+      padding: 0.7em;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .full-width {
+      flex-basis: 100%;
+    }
+    .actions {
+      flex-basis: 100%;
+      display: flex;
+      justify-content: flex-end;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    @media (max-width: 600px) {
+      form.form-flex { flex-direction: column; }
+      .actions { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+  <form class="form-flex">
+    <div class="field-group">
+      <label for="name">Name</label>
+      <input id="name" type="text" required>
+    </div>
+    <div class="field-group">
+      <label for="email">Email</label>
+      <input id="email" type="email" required>
+    </div>
+    <div class="field-group">
+      <label for="country">Country</label>
+      <select id="country">
+        <option>USA</option>
+        <option>Canada</option>
+        <option>UK</option>
+      </select>
+    </div>
+    <div class="field-group full-width">
+      <label for="message">Message</label>
+      <textarea id="message"></textarea>
+    </div>
+    <div class="actions">
+      <button type="reset">Reset</button>
+      <button type="submit">Submit</button>
+    </div>
+  </form>
+</body>
+</html>
