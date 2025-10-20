@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Task 3 — Background Gallery</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding:20px; display:grid; gap:16px; }
+    .panel { padding:18px; border-radius:8px; color:#111; }
+    .solid { background:#e7f5ff; }
+    .img-repeat { background-image: url('https://via.placeholder.com/50'); background-repeat: repeat; height:120px; }
+    .img-no-repeat { background-image:url('https://via.placeholder.com/600x160'); background-repeat:no-repeat; background-size:cover; height:160px; }
+    .linear { background: linear-gradient(90deg,#a7f3d0,#dbeafe); padding:24px; }
+    .radial { background: radial-gradient(circle,#ffd6a5,#ffafcc); padding:24px; }
+    .multi { background:
+      linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.05)),
+      url('https://via.placeholder.com/700x120');
+      background-blend-mode: overlay; background-size:cover; color:white; padding:30px; }
+  </style>
+</head>
+<body>
+  <h1>Task 3 — Background Gallery</h1>
+
+  <div class="panel solid">Solid color background (hex / rgba works similarly).</div>
+
+  <div class="panel img-repeat">Image background with repeat pattern</div>
+
+  <div class="panel img-no-repeat">Image background no-repeat + cover</div>
+
+  <div class="panel linear">Linear gradient background sample</div>
+
+  <div class="panel radial">Radial gradient background sample</div>
+
+  <div class="panel multi">Multiple background layers with blend mode</div>
+</body>
+</html>

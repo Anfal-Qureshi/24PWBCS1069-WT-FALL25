@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Task 2 — Typography Showcase</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body { padding:20px; font-family: 'Roboto', sans-serif; color:#222; }
+    header h1 { font-family: 'Playfair Display', serif; font-weight:700; font-size:2rem; margin:0 0 12px; }
+    .example { margin-bottom:18px; }
+    .open { font-family: 'Open Sans', sans-serif; }
+    .sizes span { display:block; margin:6px 0; }
+    .center { text-align:center; }
+    .shadow { text-shadow: 1px 1px 4px rgba(0,0,0,0.12); }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Typography Showcase</h1>
+  </header>
+
+  <section class="example">
+    <h2>Google Fonts Examples</h2>
+    <p class="open">Open Sans body text example.</p>
+    <p style="font-family:'Roboto', sans-serif;">Roboto used for system UI.</p>
+    <p style="font-family:'Playfair Display', serif;">Playfair heading example.</p>
+  </section>
+
+  <section class="sizes">
+    <h2>Font Sizes (different units)</h2>
+    <span style="font-size:32px;">32px — pixels</span>
+    <span style="font-size:2em;">2em — relative to parent</span>
+    <span style="font-size:1.1rem;">1.1rem — relative to root</span>
+    <span style="font-size:120%;">120% — percent</span>
+  </section>
+
+  <section class="center">
+    <h2>Text Decoration & Transformation</h2>
+    <p style="text-decoration:underline overline; text-transform:uppercase;">Uppercase with both under and overline</p>
+    <p class="shadow">Text with shadow for emphasis</p>
+  </section>
+</body>
+</html>

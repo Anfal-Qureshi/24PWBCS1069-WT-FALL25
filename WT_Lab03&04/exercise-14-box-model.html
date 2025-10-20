@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Exercise 14 — Box Model Properties</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; padding:20px; }
+    .box { width:300px; padding:16px; margin:16px; border:4px solid #cfe2ff; box-shadow: 4px 6px 10px rgba(0,0,0,0.1); border-radius:8px; background:white; }
+    .outline { outline: 3px dashed #ffc107; padding:8px; }
+  </style>
+</head>
+<body>
+  <h1>Exercise 14 — Box Model</h1>
+
+  <div class="box">Box with padding, border, margin, shadow and border-box sizing.</div>
+
+  <div class="outline">This element uses an outline (not part of box model) to show differences.</div>
+</body>
+</html>

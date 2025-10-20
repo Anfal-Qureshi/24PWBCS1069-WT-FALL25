@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Task 13 — GitHub Pages Enhancement</title>
+  <style>
+    /* Simple clean site style suitable for GitHub Pages landing */
+    :root { --bg:#f8f9fa; --card:#ffffff; --accent:#0d6efd; }
+    body { font-family: 'Segoe UI', Roboto, Arial, sans-serif; margin:0; background:var(--bg); color:#111; }
+    header { background:var(--card); padding:18px 24px; box-shadow:0 6px 18px rgba(0,0,0,0.04); display:flex; align-items:center; justify-content:space-between; }
+    header h1 { margin:0; font-size:1.1rem; }
+    .hero { max-width:940px; margin:24px auto; padding:24px; background:var(--card); border-radius:12px; box-shadow:0 12px 30px rgba(13,110,253,0.03); }
+    .hero h2 { color:var(--accent); }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px; margin-top:12px; }
+    .grid a { display:block; padding:12px; background:#fff; border-radius:8px; text-decoration:none; color:#111; box-shadow:0 6px 14px rgba(0,0,0,0.04); }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>xyz's Site</h1>
+    <nav><a href="#" style="color:var(--accent); text-decoration:none">Projects</a></nav>
+  </header>
+
+  <main class="hero">
+    <h2>Welcome — enhanced GitHub Pages look</h2>
+    <p>Clean typography, subtle shadows, consistent color scheme and improved spacing make the GitHub Pages site more professional.</p>
+
+    <div class="grid">
+      <a href="#">Portfolio</a>
+      <a href="#">Blog</a>
+      <a href="#">Resume</a>
+      <a href="#">Contact</a>
+    </div>
+  </main>
+</body>
+</html>

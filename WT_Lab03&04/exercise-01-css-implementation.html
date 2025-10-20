@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Exercise 1 — CSS Implementation Methods</title>
+  <style>
+    /* Internal CSS */
+    body { font-family: Arial, sans-serif; line-height:1.5; padding:20px; background:#f7f9fc; }
+    .internal { color: #0b5ed7; font-weight:600; }
+    #special { background: #fff3cd; padding:8px; border-radius:6px; display:inline-block; }
+  </style>
+</head>
+<body>
+  <h1>Exercise 1 — CSS Implementation Methods</h1>
+
+  <p style="color:#6f42c1;">This paragraph demonstrates inline CSS (style attribute).</p>
+
+  <p class="internal">This paragraph is styled using internal CSS (inside &lt;style&gt;).</p>
+
+  <p id="special">This paragraph uses an ID selector (#special).</p>
+
+  <p>Order of precedence demonstration:</p>
+  <!-- Element with inline style, internal style (class), and id -->
+  <div id="demo" class="internal" style="color:tomato; font-weight:normal;">
+    Inline style wins over internal/external; class and id illustrate specificity rules.
+  </div>
+</body>
+</html>

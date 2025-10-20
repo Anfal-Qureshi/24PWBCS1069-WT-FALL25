@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Exercise 9 — Text Spacing and Layout</title>
+  <style>
+    body { font-family: Georgia, serif; padding:20px; }
+    .readable { line-height:1.8; max-width:650px; }
+    .letter { letter-spacing:2px; }
+    .word { word-spacing:8px; }
+    .indent { text-indent:40px; }
+    .nowrap { white-space:nowrap; overflow:hidden; text-overflow:ellipsis; width:220px; display:block; border:1px solid #e9ecef; padding:6px; }
+  </style>
+</head>
+<body>
+  <h1>Exercise 9 — Text Spacing</h1>
+
+  <p class="readable">This paragraph shows increased line-height for readability. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+  <p class="letter">Letter spacing applied to this paragraph.</p>
+  <p class="word">Word spacing applied to this paragraph.</p>
+  <p class="indent">This paragraph begins with a text indent to simulate an article paragraph style.</p>
+
+  <div class="nowrap">This very long text should overflow and show an ellipsis when constrained by width. It demonstrates text-overflow handling.</div>
+</body>
+</html>

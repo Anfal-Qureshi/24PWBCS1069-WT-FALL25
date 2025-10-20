@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Exercise 13 — Advanced Image Effects</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding:20px; }
+    .gallery { display:flex; gap:12px; flex-wrap:wrap; }
+    .thumb { width:200px; height:130px; overflow:hidden; border-radius:8px; transition: transform 0.25s ease, filter 0.25s ease; }
+    .thumb img { width:100%; height:100%; object-fit:cover; display:block; }
+    .thumb:hover { transform:scale(1.05); filter:brightness(1.05) contrast(105%); }
+
+    .overlay { position:relative; width:200px; }
+    .overlay img { display:block; border-radius:8px; }
+    .overlay .caption { position:absolute; bottom:8px; left:8px; color:white; background:rgba(0,0,0,0.45); padding:6px 8px; border-radius:6px; font-size:0.9rem; opacity:0; transition:opacity .2s; }
+    .overlay:hover .caption { opacity:1; }
+
+    .blend { mix-blend-mode: multiply; width:200px; }
+  </style>
+</head>
+<body>
+  <h1>Exercise 13 — Advanced Image Effects</h1>
+
+  <div class="gallery">
+    <div class="thumb"><img src="UETlogo.png" alt="hover-scale"></div>
+    <div class="overlay"><img src="UETlogo.png" alt="overlay"><div class="caption">Image Overlay</div></div>
+    <img class="blend" src="UETlogo.png" alt="blend">
+  </div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Exercise 4 — Combinators</title>
+  <style>
+    /* descendant combinator */
+    .card p { color:#444; }
+
+    /* child combinator */
+    .card > h2 { margin:0; color:#0b5ed7; }
+
+    /* adjacent sibling */
+    h2 + p { font-style:italic; color:#6c757d; }
+
+    /* general sibling */
+    .note ~ .note { border-left:3px solid #adb5bd; padding-left:8px; margin-top:8px; }
+  </style>
+</head>
+<body>
+  <h1>Exercise 4 — Combinators</h1>
+
+  <div class="card">
+    <h2>Card Title</h2>
+    <section>
+      <p>Paragraph inside section which is inside card (descendant).</p>
+    </section>
+  </div>
+
+  <h2>Heading</h2>
+  <p>Adjacent paragraph to demonstrate + combinator.</p>
+
+  <div class="note">First note</div>
+  <div class="note">Second note (general sibling to previous)</div>
+</body>
+</html>

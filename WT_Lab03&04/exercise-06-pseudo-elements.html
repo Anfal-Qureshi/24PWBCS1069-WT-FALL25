@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Exercise 6 — Pseudo-elements</title>
+  <style>
+    p::first-letter { font-size:2.2rem; font-weight:700; color:#0b5ed7; float:left; margin-right:6px; }
+    p::first-line { text-transform:uppercase; letter-spacing:0.6px; }
+    .tag::before { content:"★ "; color:goldenrod; }
+    .overlay::after { content:" (read more)"; color:#6c757d; font-size:0.9em; }
+    ::selection { background:#0d6efd; color:white; }
+  </style>
+</head>
+<body>
+  <h1>Exercise 6 — Pseudo-elements</h1>
+
+  <p>lorem ipsum dolor sit amet, consectetur adipiscing elit. First-letter and first-line are styled.</p>
+
+  <p class="tag">This paragraph has a star before it via ::before.</p>
+
+  <p class="overlay">This paragraph shows extra generated content via ::after.</p>
+</body>
+</html>

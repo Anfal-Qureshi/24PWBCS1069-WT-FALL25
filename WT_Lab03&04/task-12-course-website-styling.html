@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Task 12 — Course Schedule Styling</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding:20px; background:#f8f9fa; }
+    table { width:100%; border-collapse:collapse; background:white; border-radius:8px; overflow:hidden; box-shadow:0 8px 20px rgba(0,0,0,0.05); }
+    th, td { padding:10px 12px; text-align:left; border-bottom:1px solid #e9ecef; }
+    tr:nth-child(even) td { background:#f8f9fa; }
+    tr:hover td { background:#fff7cc; }
+    .lab { background:#e7f5ff; }
+    .lecture { background:#fff0f6; }
+    @media (max-width:640px) { table, thead, tbody, th, td, tr { display:block; } thead { display:none; } tr { margin-bottom:12px; } td { border:0; padding:6px 0; } td::before { content: attr(data-label) ": "; font-weight:700; } }
+  </style>
+</head>
+<body>
+  <h1>Task 12 — Course Schedule</h1>
+  <table>
+    <thead>
+      <tr><th>Day</th><th>Time</th><th>Course</th><th>Type</th></tr>
+    </thead>
+    <tbody>
+      <tr class="lecture"><td data-label="Day">Mon</td><td data-label="Time">09:00-10:30</td><td data-label="Course">Web Technologies</td><td data-label="Type">Lecture</td></tr>
+      <tr class="lab"><td data-label="Day">Wed</td><td data-label="Time">11:00-13:00</td><td data-label="Course">Web Lab</td><td data-label="Type">Lab</td></tr>
+      <tr><td data-label="Day">Fri</td><td data-label="Time">14:00-15:30</td><td data-label="Course">Algorithms</td><td data-label="Type">Lecture</td></tr>
+    </tbody>
+  </table>
+</body>
+</html>

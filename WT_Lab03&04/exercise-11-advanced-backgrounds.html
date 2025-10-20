@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Exercise 11 — Advanced Background Techniques</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding:20px; }
+    .multiple {
+      background-image:
+        linear-gradient(to bottom right, rgba(13,110,253,0.25), rgba(13,110,253,0.05)),
+        url('https://via.placeholder.com/700x120');
+      background-blend-mode: overlay;
+      background-size: cover;
+      padding:30px;
+      border-radius:10px;
+      color:white;
+    }
+    .radial { background: radial-gradient(circle at 20% 20%, #ffd6a5, #fbdeff 60%); padding:20px; border-radius:8px; }
+    .clip { background: linear-gradient(90deg,#ff7b7b,#ffd166); -webkit-background-clip:text; color:transparent; font-weight:700; font-size:1.3rem; }
+  </style>
+</head>
+<body>
+  <h1>Exercise 11 — Advanced Backgrounds</h1>
+
+  <div class="multiple">Multiple background layers with blend mode — image + gradient overlay.</div>
+
+  <h3>Radial gradient demo</h3>
+  <div class="radial">Radial gradient background.</div>
+
+  <h3>Background clip (text gradient)</h3>
+  <div class="clip">Gradient text using background-clip (works in modern browsers)</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Exercise 10 — Background Properties</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding:20px; }
+    .solid { background: #e9f7ef; padding:12px; border-radius:6px; }
+    .bg-image { background-image: url('https://via.placeholder.com/600x150'); background-repeat:no-repeat; background-size:cover; height:150px; border-radius:6px; }
+    .bg-repeat { background-image:url('https://via.placeholder.com/60'); background-repeat:repeat; padding:12px; border-radius:6px; }
+    .attach { background-image: url('https://via.placeholder.com/800x200'); background-attachment: fixed; background-size:cover; height:200px; color:white; display:flex; align-items:center; justify-content:center; }
+  </style>
+</head>
+<body>
+  <h1>Exercise 10 — Background Properties</h1>
+
+  <div class="solid">Solid color background using hex/rgba is simple and effective.</div>
+
+  <h3>Background image (cover)</h3>
+  <div class="bg-image"></div>
+
+  <h3>Repeated pattern</h3>
+  <div class="bg-repeat">Repeated small image as background pattern.</div>
+
+  <h3>Background attachment (fixed)</h3>
+  <div class="attach">Fixed background (parallax-like)</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Task 10 — Advanced Effects Showcase</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding:20px; display:grid; gap:12px; }
+    /* Gradient text */
+    .gradient-text { background:linear-gradient(90deg,#ff7b7b,#ffd166); -webkit-background-clip:text; color:transparent; font-size:1.6rem; font-weight:700; }
+
+    /* Custom checkbox */
+    .custom-checkbox input { display:none; }
+    .custom-checkbox label { display:inline-block; border:2px solid #e9ecef; padding:6px 10px; border-radius:6px; cursor:pointer; }
+    .custom-checkbox input:checked + label { background:#0d6efd; color:white; border-color:#0d6efd; }
+
+    /* simple loader */
+    .loader { width:36px; height:36px; border-radius:50%; border:4px solid #e9ecef; border-top-color:#0d6efd; animation:spin 0.8s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* text clipping with background images */
+    .clip { font-size:2.2rem; font-weight:700; background:url('https://via.placeholder.com/600x120') center/cover; -webkit-background-clip:text; color:transparent; }
+    .shadow-complex { text-shadow: 2px 2px 0 rgba(0,0,0,0.06), 6px 12px 24px rgba(0,0,0,0.08); padding:12px; display:inline-block; }
+  </style>
+</head>
+<body>
+  <h1>Task 10 — Advanced Effects</h1>
+
+  <div class="gradient-text">Gradient Text Effect</div>
+
+  <div class="custom-checkbox">
+    <input id="cb1" type="checkbox"><label for="cb1">Custom Checkbox</label>
+  </div>
+
+  <div class="loader" aria-hidden="true"></div>
+
+  <div class="clip">Clipped text with background image</div>
+
+  <div class="shadow-complex">Complex shadow example</div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Task 11 — Personal Portfolio Styling</title>
+  <style>
+    :root { --accent:#0d6efd; --muted:#6c757d; }
+    body { font-family: 'Segoe UI', Roboto, Arial, sans-serif; margin:0; background:#f8f9fa; color:#111; }
+    header { background:linear-gradient(90deg,var(--accent),#6610f2); color:white; padding:20px 24px; }
+    nav { display:flex; gap:12px; margin-top:8px; }
+    nav a { color:white; text-decoration:none; opacity:0.9; }
+    .container { max-width:980px; margin:20px auto; padding:18px; background:white; border-radius:10px; }
+    .profile { display:flex; gap:16px; align-items:center; }
+    .profile img { width:120px; height:120px; border-radius:12px; object-fit:cover; }
+    .cta { background:var(--accent); color:white; padding:8px 14px; border-radius:8px; text-decoration:none; }
+    /* responsive */
+    @media (max-width:640px) { .profile { flex-direction:column; align-items:flex-start; } }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Portfolio</h1>
+    <nav><a href="#">Home</a><a href="#">Work</a><a href="#">Contact</a></nav>
+  </header>
+
+  <main class="container">
+    <section class="profile">
+      <img src="https://via.placeholder.com/300" alt="me">
+      <div>
+        <h2>Rumaisa Qureshi</h2>
+        <p style="color:var(--muted)">Web developer student — building front-end projects and designs.</p>
+        <a class="cta" href="#">View projects</a>
+      </div>
+    </section>
+
+    <section style="margin-top:18px;">
+      <h3>Skills</h3>
+      <ul><li>HTML & CSS</li><li>Responsive design</li><li>Basic JavaScript</li></ul>
+    </section>
+  </main>
+</body>
+</html>

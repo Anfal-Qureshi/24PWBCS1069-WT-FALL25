@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Exercise 3 — Attribute Selectors</title>
+  <style>
+    /* attribute presence */
+    a[target] { color:#0d6efd; text-decoration:underline; }
+
+    /* exact value */
+    input[type="email"] { background:#eef9ff; padding:6px; }
+
+    /* partial matching contains */
+    a[href*="example"] { color:crimson; }
+
+    /* begins with */
+    img[src^="https"] { border:3px solid #cfe2ff; border-radius:6px; }
+
+    /* ends with */
+    a[href$=".pdf"] { font-weight:700; color: #0b7285; }
+  </style>
+</head>
+<body>
+  <h1>Exercise 3 — Attribute Selectors</h1>
+
+  <p><a href="https://example.com/page" target="_blank">Link containing "example" and has target attribute</a></p>
+
+  <p><a href="files/guide.pdf">A PDF link (ends with .pdf)</a></p>
+
+  <form>
+    <label>Email<input type="email" placeholder="you@example.com"></label>
+    <br><br>
+    <label>Search image (https images get border)</label><br>
+    <img src="https://via.placeholder.com/120" alt="placeholder">
+  </form>
+</body>
+</html>

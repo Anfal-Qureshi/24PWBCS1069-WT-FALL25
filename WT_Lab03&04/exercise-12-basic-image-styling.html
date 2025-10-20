@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Exercise 12 — Basic Image Styling</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding:20px; }
+    img { max-width:100%; display:block; }
+    .fixed { width:200px; height:120px; object-fit:cover; border-radius:8px; border:3px solid #e9ecef; }
+    .circle { width:120px; height:120px; object-fit:cover; border-radius:50%; }
+    .filter { filter:grayscale(40%) contrast(110%); width:200px; }
+  </style>
+</head>
+<body>
+  <h1>Exercise 12 — Basic Image Styling</h1>
+
+  <img class="fixed" src="UETlogo.png" alt="fixed-size">
+
+  <h3>Circular image</h3>
+  <img class="circle" src="UETlogo.png" alt="circle">
+
+  <h3>Image with basic filters</h3>
+  <img class="filter" src="UETlogo.png" alt="filter">
+</body>
+</html>

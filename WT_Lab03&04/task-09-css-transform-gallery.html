@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Task 9 — CSS Transform Gallery</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding:20px; display:flex; gap:12px; flex-wrap:wrap; }
+    .demo { width:160px; height:120px; background:#fff; border-radius:8px; display:flex; align-items:center; justify-content:center; transition:transform .3s; box-shadow:0 8px 20px rgba(0,0,0,0.06); }
+    .rotate:hover { transform:rotate(15deg); }
+    .scale:hover { transform:scale(1.15); }
+    .translate:hover { transform:translateX(14px); }
+    .skew:hover { transform:skewX(8deg); }
+    .three { transform: perspective(500px) rotateY(12deg); } /* 3D demo (static) */
+  </style>
+</head>
+<body>
+  <div class="demo rotate">Rotate</div>
+  <div class="demo scale">Scale</div>
+  <div class="demo translate">Translate</div>
+  <div class="demo skew">Skew</div>
+  <div class="demo three">3D rotateY</div>
+</body>
+</html>

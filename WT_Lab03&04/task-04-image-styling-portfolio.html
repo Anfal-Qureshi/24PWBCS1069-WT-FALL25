@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Task 4 — Image Styling Portfolio</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding:20px; }
+    .gallery { display:flex; gap:12px; flex-wrap:wrap; }
+    .card { width:200px; background:#fff; border-radius:8px; padding:8px; box-shadow:0 6px 12px rgba(0,0,0,0.08); text-align:center; }
+    .card img { width:100%; height:130px; object-fit:cover; border-radius:6px; transition: transform .25s, filter .25s; }
+    .card img:hover { transform:scale(1.03); filter:brightness(1.05); }
+    .rounded { border-radius:12px; }
+    .circular { width:90px; height:90px; border-radius:50%; object-fit:cover; display:block; margin:8px auto; }
+    .overlay { position:relative; }
+    .overlay .text { position:absolute; bottom:8px; left:8px; color:white; background:rgba(0,0,0,0.45); padding:6px; border-radius:6px; }
+    .filtered { filter:grayscale(60%) contrast(105%); }
+  </style>
+</head>
+<body>
+  <h1>Task 4 — Image Styling Portfolio</h1>
+
+  <div class="gallery">
+    <div class="card">
+      <img class="rounded" src="https://via.placeholder.com/400x260" alt="rounded">
+      <p>Rounded corners</p>
+    </div>
+
+    <div class="card overlay">
+      <img src="https://via.placeholder.com/400x260" alt="overlay">
+      <div class="text">Overlay text</div>
+      <p>Image overlay with text</p>
+    </div>
+
+    <div class="card">
+      <img class="circular" src="https://via.placeholder.com/300" alt="circular">
+      <p>Circular image</p>
+    </div>
+
+    <div class="card">
+      <img class="filtered" src="https://via.placeholder.com/400x260" alt="filter">
+      <p>Filtered image</p>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Exercise 15 — Transforms & Transitions</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding:20px; display:flex; gap:20px; align-items:flex-start; flex-wrap:wrap; }
+    .tile { width:160px; height:120px; background:#fff; border-radius:8px; display:flex; align-items:center; justify-content:center; transition: transform 300ms ease, box-shadow 300ms ease; box-shadow:0 6px 12px rgba(0,0,0,0.08); }
+    .tile:hover { transform: translateY(-8px) scale(1.03) rotate(-2deg); box-shadow:0 12px 24px rgba(0,0,0,0.15); }
+    .origin { transform-origin: top left; }
+    .rotate:hover { transform: rotate(12deg) scale(1.05); }
+  </style>
+</head>
+<body>
+  <div class="tile origin">Origin top-left</div>
+  <div class="tile rotate">Rotate on hover</div>
+  <div class="tile">Translate & scale on hover</div>
+</body>
+</html>
